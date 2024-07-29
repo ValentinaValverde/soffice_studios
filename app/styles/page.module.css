@@ -1,0 +1,55 @@
+.landing {
+  /* background-color: pink; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 100vh;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: black;
+  margin: 20px;
+  padding: 20px;
+  height: 400px;
+  width: 25%;
+  max-width: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+  border: solid white 2px;
+  transition: 0.5s;
+}
+
+.card:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .card {
+    height: 200px;
+    width: 20%;
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .card {
+    height: 150px;
+  }
+}

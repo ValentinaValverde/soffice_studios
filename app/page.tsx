@@ -1,13 +1,36 @@
+import Card from './components/Card';
 import styles from './styles/page.module.css';
 
 export default function Home() {
   return (
     <main>
-      <div>
-        <p>hello world</p>
-        {/* <a href="/projects">projects</a> */}
-        {/* <a href="/projects/to-do">to-do</a> */}
-        {/* <a href="/projects/calculator">calc</a> */}
+      <div className={styles.landing}>
+        <div />
+        <div>
+          <h1>Soffice Studios</h1>
+          <p>
+            By{' '}
+            <a href="https://www.linkedin.com/in/valentina-valverde-1a179227a/">
+              Val
+            </a>
+          </p>
+        </div>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="35px"
+          viewBox="0 -960 960 960"
+          width="40px"
+          fill="#FFFFFF"
+        >
+          <path d="M480-344 240-584l47.33-47.33L480-438.67l192.67-192.66L720-584 480-344Z" />
+        </svg>
+      </div>
+
+      <div className={styles.cardContainer}>
+        <Card title={'Calculator'} />
+        <Card title={'Calculator'} />
+        <Card title={'Calculator'} />
       </div>
     </main>
   );
