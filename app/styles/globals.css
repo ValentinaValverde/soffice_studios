@@ -3,11 +3,17 @@
   color: white;
 }
 
+h1 {
+  margin-bottom: 0px;
+}
+
 a {
   text-decoration: none;
   color: white;
 }
 
-h1 {
-  margin-bottom: 0px;
+/* wanted to see if this would work */
+/* surprise: it does not */
+body:hover {
+  cursor: url('../favicon.ico');
 }
