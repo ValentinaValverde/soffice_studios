@@ -1,5 +1,5 @@
-import Card from './components/Card';
 import styles from './styles/page.module.css';
+import Card, { ComingSoonCard } from './components/Card';
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
       <div className={styles.cardContainer}>
         <Card title={'Calculator'} link="/projects/calculator" />
         <Card title={'To-Do'} link="/projects/to-do" />
-        <Card title={'Coming Soon...'} link="/" />
+        <ComingSoonCard />
       </div>
     </main>
   );

@@ -14,3 +14,11 @@ export default function Card({ title, subtext, link }: Type) {
     </a>
   );
 }
+
+export function ComingSoonCard() {
+  return (
+    <div className={styles.comingSoonCard}>
+      <p>Coming Soon</p>
+    </div>
+  );
+}
