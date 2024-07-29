@@ -28,9 +28,9 @@ export default function Home() {
       </div>
 
       <div className={styles.cardContainer}>
-        <Card title={'Calculator'} />
-        <Card title={'Calculator'} />
-        <Card title={'Calculator'} />
+        <Card title={'Calculator'} link="/projects/calculator" />
+        <Card title={'To-Do'} link="/projects/to-do" />
+        <Card title={'Coming Soon...'} link="/" />
       </div>
     </main>
   );

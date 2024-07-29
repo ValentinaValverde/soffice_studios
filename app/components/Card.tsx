@@ -3,13 +3,14 @@ import styles from '../styles/page.module.css';
 interface Type {
   title: string;
   subtext?: string;
+  link: string;
 }
 
-export default function Card({ title, subtext }: Type) {
+export default function Card({ title, subtext, link }: Type) {
   return (
-    <div className={styles.card}>
+    <a href={link} className={styles.card}>
       <p>{title}</p>
       <p>{subtext}</p>
-    </div>
+    </a>
   );
 }
