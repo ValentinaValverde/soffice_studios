@@ -30,14 +30,9 @@ export default function Calculator() {
       const array = input.split('%');
       const solution = (parseFloat(array[0]) % parseFloat(array[1])).toString();
       setInput(solution);
-    } else if (input.includes('?')) {
-      alert(
-        "Congrats! You've found your first clue. Check the console for further instructions :)"
-      );
-      console.log("Here's your clue!");
-      console.log('L');
     } else {
-      setInput(input);
+      // setInput(input);
+      setInput('ERR');
     }
   };
 
@@ -51,7 +46,11 @@ export default function Calculator() {
         evaluate(input);
         break;
       case '?':
-        setInput('?');
+        alert(
+          "Congrats! You've found your first clue. Check the console for further instructions :)"
+        );
+        console.log("Here's your clue!");
+        console.log('L');
         break;
       default:
         setInput(input + value);
