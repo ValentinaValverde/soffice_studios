@@ -1,7 +1,102 @@
-export default function ToDo() {
+'use client';
+import { useState } from 'react';
+
+export default function ToDoTwo() {
+  const [value, setValue] = useState('');
+  const [itemList, setItemList] = useState([]);
+  const [showClearButton, setShowClearButton] = useState(false);
+
+  const onSubmit = (e: any) => {
+    e?.preventDefault();
+    setValue('');
+
+    const trimmed = value.trim();
+
+    if (trimmed) {
+      setItemList([value, ...itemList]);
+      setShowClearButton(true);
+    } else {
+      alert('Please Type Something');
+    }
+  };
+
+  const clearList = () => {
+    setItemList([]);
+    setShowClearButton(false);
+  };
+
   return (
-    <div>
-      <p>this is my to-do route</p>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <p>To-Do List</p>
+
+      <form onSubmit={onSubmit}>
+        <input
+          required
+          type="text"
+          placeholder="Type Item Here..."
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
+          style={{
+            borderRadius: 100,
+            padding: '10px 20px 10px 20px',
+            border: 'none',
+          }}
+        />
+        <button
+          type="submit"
+          style={{
+            borderRadius: 100,
+            padding: '10px 20px 10px 20px',
+            border: 'none',
+            marginLeft: 10,
+          }}
+        >
+          submit
+        </button>
+      </form>
+
+      <div
+        style={{
+          marginTop: 20,
+          width: 300,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'space-around',
+        }}
+      >
+        {itemList.map((item, i) => {
+          return (
+            <>
+              <div style={{ marginTop: 5 }}>
+                <input type="checkbox" key={i} />
+                <label>{item}</label>
+              </div>
+            </>
+          );
+        })}
+      </div>
+
+      {showClearButton ? (
+        <button
+          style={{
+            marginTop: 50,
+            borderRadius: 100,
+            padding: '10px 20px 10px 20px',
+            border: 'none',
+            marginLeft: 10,
+          }}
+          onClick={clearList}
+        >
+          Clear List
+        </button>
+      ) : null}
     </div>
   );
 }
