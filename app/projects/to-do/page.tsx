@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function ToDoTwo() {
   const [value, setValue] = useState('');
-  const [itemList, setItemList] = useState([]);
+  const [itemList, setItemList] = useState<string[]>([]);
   const [showClearButton, setShowClearButton] = useState(false);
 
   const onSubmit = (e: any) => {
@@ -16,7 +16,7 @@ export default function ToDoTwo() {
       setItemList([value, ...itemList]);
       setShowClearButton(true);
     } else {
-      alert('Please Type Something');
+      alert('Please type something');
     }
   };
 
